@@ -4,9 +4,9 @@ import * as sass from 'sass'
 import browserslist from 'browserslist'
 import { transform, browserslistToTargets } from 'lightningcss'
 
-export default function (eleventyConfig) {
+export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginWebc, {
-    components: '_includes/webc/*/*.webc'
+    components: '_includes/webc/**/*.webc'
   })
   eleventyConfig.addTemplateFormats('scss')
   eleventyConfig.addExtension('scss', {
@@ -23,6 +23,7 @@ export default function (eleventyConfig) {
         loadPaths: [
           parsed.dir || '.',
           'node_modules/modern-css-reset/dist',
+          'node_modules/utopia-core-scss/src',
           this.config.dir.includes
         ],
         sourceMap: true
@@ -45,4 +46,11 @@ export default function (eleventyConfig) {
       }
     }
   })
-};
+  // eleventyConfig.addFilter('alwaysRed', () => {
+
+  // })
+  eleventyConfig.addPassthroughCopy("fonts/*.ttf");
+  // eleventyConfig.addPassthroughCopy("Cinzel.ttf");
+  // eleventyConfig.addPassthroughCopy("ElMessiri.ttf");
+  // eleventyConfig.addPassthroughCopy("MonaspaceRadon.ttf");
+}

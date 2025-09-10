@@ -1,6 +1,4 @@
-I'm a WebC Component!
-<style>
-  body {
-    font-weight: 900;
-  }
-</style>
+<div class="test">
+  I'm a WebC Component!
+</div>
+

@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style @raw="getBundle('css')" webc:keep></style>
+    <title>Emily & Jacob | Wedding Invite</title>
+    <link rel="stylesheet" href="/styles/index.css" webc:keep>
   </head>
-  <body @html="this.content"></body>
+  <body>
+    <header>
+       <h1><span class="subhead">You're Invited</span><br/>Emily and Jacob's Wedding</h1>
+    </header>
+    <main @html="this.content"></main>
+  </body>
 </html>
