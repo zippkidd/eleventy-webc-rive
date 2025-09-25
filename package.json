@@ -20,6 +20,7 @@
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@rive-app/canvas-lite": "^2.31.6",
     "browserslist": "^4.24.4",
     "lightningcss": "^1.29.3",
     "sass": "^1.87.0",
