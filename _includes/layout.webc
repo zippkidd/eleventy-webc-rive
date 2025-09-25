@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emily & Jacob | Wedding Invite</title>
-    <link rel="stylesheet" href="/styles/index.css" webc:keep>
+    <link rel="stylesheet" href="/styles/index.css" webc:keep />
   </head>
   <body>
     <header>
-       <h1>
-        <div class="subhead el-messiri">You're Invited!</div>
-        <svg>
-
-        </svg>
-        <div>Emily and Jacob's Wedding</div>
+      <h1>
+        <div class="cursive kapakana">You Are Invited</div>
+        <div class="subhead el-messiri">to the Wedding of</div>
+        <div class="heading">Emily and Jacob</div>
       </h1>
     </header>
     <main @html="this.content"></main>

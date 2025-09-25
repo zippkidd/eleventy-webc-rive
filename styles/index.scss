@@ -3,7 +3,6 @@
 @use "helpers" as *;
 @use "tokens" as *;
 
-
 // Base
 
 html {
@@ -21,7 +20,7 @@ body {
   // font-family: 'Monaspace Radon', Arial, sans-serif;
   // font-family: 'Cinzel', Arial, sans-serif;
   font-family: $font-family-body;
-  font-weight: 330;
+  font-weight: 310;
   font-size: var(--step_0);
   color: $color-tertiary;
   color: rgb(3, 95, 95);
@@ -42,17 +41,21 @@ main {
   margin-inline: auto;
 }
 
-
 // #region Typography
 // @use "./fonts.scss"
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   // font-family: 'Georgia';
   // font-family: 'Didot';
   // font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
   // font-family: 'Palatino', 'Georgia', sans-serif;
   line-height: 1;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 h1 {
@@ -63,8 +66,24 @@ h1 {
   // font-family: 'El Messiri';
 }
 
+.cursive {
+  font-size: var(--step_5);
+}
+
 .subhead {
-  font-size: var(--step_2);
+  margin-top: 1em;
+  font-size: var(--step_1);
+  letter-spacing: -0.0125ch;
+  line-height: 1;
+  font-weight: 250;
+}
+
+.heading {
+  margin-top: var(--space_3xs);
+}
+
+.prose {
+  letter-spacing: -0.05ch;
 }
 
 h2 {

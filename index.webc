@@ -2,4 +2,11 @@
 layout: "layout.webc"
 ---
 
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos quas ullam omnis ea repudiandae reiciendis nam molestias! Nisi ad eligendi voluptatibus, fugiat nesciunt porro ipsum et recusandae aperiam, rem eveniet.</p>
+<article class="prose">
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos quas ullam
+    omnis ea repudiandae reiciendis nam molestias! Nisi ad eligendi
+    voluptatibus, fugiat nesciunt porro ipsum et recusandae aperiam, rem
+    eveniet.
+  </p>
+</article>
