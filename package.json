@@ -30,6 +30,7 @@
   "devDependencies": {
     "esbuild": "^0.25.10",
     "modern-css-reset": "^1.4.0",
-    "standard": "^17.1.2"
+    "standard": "^17.1.2",
+    "terser": "^5.44.0"
   }
 }
