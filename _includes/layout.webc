@@ -9,11 +9,14 @@
   <body>
     <header>
       <h1>
-        <div class="cursive kapakana">You Are Invited</div>
+        <!-- <div class="cursive kapakana">You Are Invited</div> -->
+        <canvas id="handwritten-cursive"></canvas>
+        <span class="sr-only">You Are Invited</span>
         <div class="subhead el-messiri">to the Wedding of</div>
-        <div class="heading">Emily and Jacob</div>
+        <div class="heading">Emily & Jacob</div>
       </h1>
     </header>
     <main @html="this.content"></main>
+    <script src="/scripts/bundle.js" webc:keep></script>
   </body>
 </html>
