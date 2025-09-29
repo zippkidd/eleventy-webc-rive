@@ -51,5 +51,5 @@ export default async function (eleventyConfig) {
   // })
   eleventyConfig.addPassthroughCopy('fonts/*.ttf')
   eleventyConfig.addPassthroughCopy('rive/*.riv')
-  // eleventyConfig.addPassthroughCopy('rive/*.js')
+  eleventyConfig.addPassthroughCopy('rive/*.js')
 }
