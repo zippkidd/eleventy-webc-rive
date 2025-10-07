@@ -1,28 +1,40 @@
 import { Rive, Fit, Layout } from '@rive-app/canvas-lite'
 
 const animations = () => {
+  let riveInstance
+
   const layout = new Layout({
-    fit: Fit.Layout,
-    layoutScaleFactor: 1
+    fit: Fit.Contain, // Changed from Fit.Layout
+    // alignment: Alignment.Center // Optional: centers the animation
   })
 
   const cursiveHandwritingCanvas = document.getElementById('handwritten-cursive')
 
-  window.addEventListener('resize', () => {
-    riveInstance.resizeDrawingSurfaceToCanvas()
-  }, false)
+  // Set canvas dimensions to maintain aspect ratio
+  const setCanvasSize = () => {
+    console.log('setCanvasSize...')
+    const containerWidth = window.innerWidth * 0.65 // 80% of viewport width
+    const aspectRatio = 475 / 67 // width / height from your animation
 
-  const cleanupRive = () => {
-    riveInstance.cleanup()
+    cursiveHandwritingCanvas.width = containerWidth
+    cursiveHandwritingCanvas.height = containerWidth / aspectRatio
+
+    if (riveInstance) {
+      riveInstance.resizeDrawingSurfaceToCanvas()
+    }
   }
 
-  const riveInstance = new Rive({
+  setCanvasSize()
+
+  window.addEventListener('resize', setCanvasSize, false)
+
+  riveInstance = new Rive({
     src: '/rive/yai-mini-bezier.riv',
     canvas: cursiveHandwritingCanvas,
     layout,
     autoplay: true,
     onLoad: () => {
-      riveInstance.resizeDrawingSurfaceToCanvas()
+      setCanvasSize()
     }
   })
 

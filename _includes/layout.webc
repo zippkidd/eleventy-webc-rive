@@ -8,9 +8,9 @@
   </head>
   <body>
     <header>
+      <canvas id="handwritten-cursive"></canvas>
       <h1>
         <!-- <div class="cursive kapakana">You Are Invited</div> -->
-        <canvas id="handwritten-cursive"></canvas>
         <span class="sr-only">You Are Invited</span>
         <div class="subhead el-messiri">to the Wedding of</div>
         <div class="heading">Emily & Jacob</div>

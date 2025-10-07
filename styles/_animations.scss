@@ -1,0 +1,11 @@
+canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  &#handwritten-cursive {
+    margin: 0 auto;
+    // max-width: 35ch;
+    width: clamp(24ch, 35%, 35ch);
+  }
+}
