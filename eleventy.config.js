@@ -46,10 +46,8 @@ export default async function (eleventyConfig) {
       }
     }
   })
-  // eleventyConfig.addFilter('alwaysRed', () => {
 
-  // })
   eleventyConfig.addPassthroughCopy('fonts/*.ttf')
   eleventyConfig.addPassthroughCopy('rive/*.riv')
-  eleventyConfig.addPassthroughCopy('rive/*.js')
+  eleventyConfig.addWatchTarget('./scripts/')
 }
