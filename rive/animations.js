@@ -8,7 +8,7 @@ const animations = () => {
   })
 
   const riveInstance = new Rive({
-    src: '/rive/flowers_animating_prod_1.0.1.riv',
+    src: '/rive/flowers_animating_prod-1.0.1.riv',
     canvas: cursiveHandwritingCanvas,
     layout,
     artboard: 'Artboard You-Are-Invited',
