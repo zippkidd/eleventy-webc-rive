@@ -8,9 +8,10 @@ const animations = () => {
   })
 
   const riveInstance = new Rive({
-    src: '/rive/yai-mini-bezier.riv',
+    src: '/rive/flowers_animating_prod_1.0.1.riv',
     canvas: cursiveHandwritingCanvas,
     layout,
+    artboard: 'Artboard You-Are-Invited',
     autoplay: true,
     onLoad: () => {
       setCanvasSize()
@@ -35,7 +36,7 @@ const animations = () => {
 
   window.addEventListener('resize', setCanvasSize, false)
 
-  riveInstance.play('Handwriting')
+  riveInstance.play('You-Are-Invited')
 }
 
 if (document.readyState === 'LOADING') {
