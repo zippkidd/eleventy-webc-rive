@@ -49,5 +49,6 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('fonts/*.ttf')
   eleventyConfig.addPassthroughCopy('rive/*.riv')
+  eleventyConfig.addPassthroughCopy({ 'node_modules/@rive-app/canvas-lite/rive.wasm' : 'rive' })
   eleventyConfig.addWatchTarget('./scripts/')
 }

@@ -1,4 +1,6 @@
-import { Rive, Fit, Layout } from '@rive-app/canvas-lite'
+import { Rive, RuntimeLoader, Fit, Layout } from '@rive-app/canvas-lite'
+
+RuntimeLoader.setWasmUrl('/rive/rive.wasm')
 
 const animations = () => {
   const cursiveHandwritingCanvas = document.getElementById('handwritten-cursive')
@@ -11,7 +13,6 @@ const animations = () => {
     src: '/rive/flowers_animating_prod-1.0.1.riv',
     canvas: cursiveHandwritingCanvas,
     layout,
-    artboard: 'Artboard You-Are-Invited',
     autoplay: true,
     onLoad: () => {
       setCanvasSize()
@@ -36,7 +37,9 @@ const animations = () => {
 
   window.addEventListener('resize', setCanvasSize, false)
 
-  riveInstance.play('You-Are-Invited')
+  // riveInstance.play('You-Are-Invited')
+  riveInstance.play()
+  // riveInstance.pause()
 }
 
 if (document.readyState === 'LOADING') {

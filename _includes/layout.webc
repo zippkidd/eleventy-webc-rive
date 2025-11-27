@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emily & Jacob | Wedding Invite</title>
     <link rel="stylesheet" href="/styles/index.css" webc:keep />
+    <link rel="preload" href="/rive/rive.wasm" as="fetch" crossOrigin="anonymous" webc:keep />
   </head>
   <body>
     <header>
