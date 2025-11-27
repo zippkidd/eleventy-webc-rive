@@ -2,7 +2,19 @@ import { Rive, RuntimeLoader, Fit, Layout } from '@rive-app/canvas-lite'
 
 RuntimeLoader.setWasmUrl('/rive/rive.wasm')
 
-const animations = () => {
+const animationsList =
+[
+  'big_pink_flower_l',
+  'big_pink_flower_r',
+  'yellow_flower_thin',
+  'yellow_flower_wide',
+  'yellow_flower_short-wide',
+  'small_pink_flower',
+  'leaves',
+  'you_are_invited'
+]
+
+const init = () => {
   const cursiveHandwritingCanvas = document.getElementById('handwritten-cursive')
   const layout = new Layout({
     fit: Fit.Contain // Changed from Fit.Layout
@@ -43,7 +55,7 @@ const animations = () => {
 }
 
 if (document.readyState === 'LOADING') {
-  document.addEventListener('DOMContentLoaded', animations)
+  document.addEventListener('DOMContentLoaded', init)
 } else {
-  animations()
+  init()
 }
