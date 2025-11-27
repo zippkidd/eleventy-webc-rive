@@ -8,6 +8,10 @@ canvas {
     // max-width: 35ch;
     width: clamp(24ch, 35%, 35ch);
   }
+
+  &#leaves {
+    display: none;
+  }
 }
 
 .flowers {
@@ -19,5 +23,11 @@ canvas {
 
   canvas {
     margin-top: -1px;
+
+    @media screen and (min-width: 600px) {
+      &#leaves {
+        display: block;
+      }
+    }
   }
 }
