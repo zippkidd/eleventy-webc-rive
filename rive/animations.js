@@ -2,47 +2,34 @@ import { Rive, RuntimeLoader, Fit, Layout } from '@rive-app/canvas-lite'
 
 RuntimeLoader.setWasmUrl('/rive/rive.wasm')
 
-// Each animation now includes a `name` and an `aspectRatio` (width / height).
-// Adjust the aspectRatio values as needed per animation.
-const DEFAULT_ASPECT_RATIO = 4 / 3 // fallback width / height
+const DEFAULT_ASPECT_RATIO = 1
 
 const animationsList = [
   { name: 'big_pink_flower_l', aspectRatio: 130 / 205 },
-  { name: 'big_pink_flower_r', aspectRatio: DEFAULT_ASPECT_RATIO },
-  { name: 'yellow_flower_thin', aspectRatio: DEFAULT_ASPECT_RATIO },
-  { name: 'yellow_flower_wide', aspectRatio: DEFAULT_ASPECT_RATIO },
-  { name: 'yellow_flower_short-wide', aspectRatio: DEFAULT_ASPECT_RATIO },
-  { name: 'small_pink_flower', aspectRatio: DEFAULT_ASPECT_RATIO },
-  { name: 'leaves', aspectRatio: DEFAULT_ASPECT_RATIO },
-  { name: 'you_are_invited', aspectRatio: DEFAULT_ASPECT_RATIO }
+  { name: 'big_pink_flower_r', aspectRatio: 85 / 131 },
+  { name: 'yellow_flower_thin', aspectRatio: 48 / 86 },
+  { name: 'yellow_flower_wide', aspectRatio: 68 / 87 },
+  { name: 'yellow_flower_short-wide', aspectRatio: 68 / 63 },
+  { name: 'small_pink_flower', aspectRatio: 30 / 40 },
+  { name: 'leaves', aspectRatio: 29 / 35 },
+  { name: 'you_are_invited', aspectRatio: 483 / 73 }
 ]
 
-// Store Rive instances and state
 const riveInstances = new Map()
 const resizeListeners = new Map()
 let resizeObserver
 
-/**
- * Check if a canvas element is visible (not hidden by display: none or similar)
- */
 const isCanvasVisible = (canvas) => {
-  // offsetParent is null if display:none or visibility:hidden
   if (canvas.offsetParent === null) return false
-
-  // Additional check for visibility: hidden (offsetParent doesn't catch this)
   return window.getComputedStyle(canvas).visibility !== 'hidden'
 }
 
-/**
- * Create a Rive instance for a given animation
- */
 const createRiveInstance = (animation) => {
   const canvas = document.getElementById(animation.name)
   if (!canvas) return null
 
   const layout = new Layout({
     fit: Fit.Contain
-    // alignment: Alignment.Center // Optional: centers the animation
   })
 
   const riveInstance = new Rive({
@@ -55,7 +42,6 @@ const createRiveInstance = (animation) => {
     }
   })
 
-  // Set canvas dimensions to maintain aspect ratio
   const setCanvasSize = () => {
     const containerWidth = window.innerWidth * 0.65
     canvas.width = containerWidth
@@ -77,9 +63,6 @@ const createRiveInstance = (animation) => {
   return riveInstance
 }
 
-/**
- * Clean up a Rive instance
- */
 const cleanupRiveInstance = (animationName) => {
   const instance = riveInstances.get(animationName)
   if (instance) {
@@ -95,9 +78,6 @@ const cleanupRiveInstance = (animationName) => {
   }
 }
 
-/**
- * Check visibility of all canvases and create/cleanup instances accordingly
- */
 const updateCanvasVisibility = () => {
   animationsList.forEach((animation) => {
     const canvas = document.getElementById(animation.name)
@@ -107,28 +87,23 @@ const updateCanvasVisibility = () => {
     const hasInstance = riveInstances.has(animation.name)
 
     if (isVisible && !hasInstance) {
-      // Canvas is now visible, create instance
       const instance = createRiveInstance(animation)
       if (instance) {
         riveInstances.set(animation.name, instance)
       }
     } else if (!isVisible && hasInstance) {
-      // Canvas is now hidden, cleanup instance
       cleanupRiveInstance(animation.name)
     }
   })
 }
 
 const init = () => {
-  // Initialize all visible canvases
   updateCanvasVisibility()
 
-  // Set up ResizeObserver to track changes to canvas visibility
   resizeObserver = new window.ResizeObserver(() => {
     updateCanvasVisibility()
   })
 
-  // Observe all canvas elements for visibility changes
   animationsList.forEach((animation) => {
     const canvas = document.getElementById(animation.name)
     if (canvas) {
@@ -136,7 +111,6 @@ const init = () => {
     }
   })
 
-  // Also handle window resize events for visibility updates
   let resizeTimeout
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout)
