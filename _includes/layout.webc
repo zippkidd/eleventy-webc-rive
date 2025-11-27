@@ -5,28 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emily & Jacob | Wedding Invite</title>
     <link rel="stylesheet" href="/styles/index.css" webc:keep />
-    <link rel="preload" href="/rive/rive.wasm" as="fetch" crossOrigin="anonymous" webc:keep />
-    <link rel="preload" href="/rive/big_pink_flower_l.riv" as="fetch" crossOrigin="anonymous" webc:keep />
-    <link rel="preload" href="/rive/yellow_flower_thin.riv" as="fetch" crossOrigin="anonymous" webc:keep />
-    <link rel="preload" href="/rive/yellow_flower_short-wide.riv" as="fetch" crossOrigin="anonymous" webc:keep />
-    <link rel="preload" href="/rive/yellow_flower_wide.riv" as="fetch" crossOrigin="anonymous" webc:keep />
-    <link rel="preload" href="/rive/big_pink_flower_r.riv" as="fetch" crossOrigin="anonymous" webc:keep />
-    <link rel="preload" href="/rive/small_pink_flower.riv" as="fetch" crossOrigin="anonymous" webc:keep />
-    <link rel="preload" href="/rive/leaves.riv" as="fetch" crossOrigin="anonymous" webc:keep />
-    <link rel="preload" href="/rive/you_are_invited.riv" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link
+      rel="preload"
+      href="/rive/rive.wasm"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
+    <link
+      rel="preload"
+      href="/rive/big_pink_flower_l.riv"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
+    <link
+      rel="preload"
+      href="/rive/yellow_flower_thin.riv"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
+    <link
+      rel="preload"
+      href="/rive/yellow_flower_short-wide.riv"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
+    <link
+      rel="preload"
+      href="/rive/yellow_flower_wide.riv"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
+    <link
+      rel="preload"
+      href="/rive/big_pink_flower_r.riv"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
+    <link
+      rel="preload"
+      href="/rive/small_pink_flower.riv"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
+    <link
+      rel="preload"
+      href="/rive/leaves.riv"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
+    <link
+      rel="preload"
+      href="/rive/you_are_invited.riv"
+      as="fetch"
+      crossOrigin="anonymous"
+      webc:keep
+    />
   </head>
   <body>
     <div class="flowers">
-      <canvas id="big_pink_flower_l" aria-hidden="true"></canvas>
-      <canvas id="yellow_flower_thin" aria-hidden="true"></canvas>
-      <canvas id="yellow_flower_wide" aria-hidden="true"></canvas>
-      <canvas id="yellow_flower_short-wide" aria-hidden="true"></canvas>
-      <canvas id="big_pink_flower_r" aria-hidden="true"></canvas>
-      <canvas id="small_pink_flower" aria-hidden="true"></canvas>
-      <canvas id="leaves" aria-hidden="true"></canvas>
+      <div class="flowers__top">
+        <canvas
+          id="big_pink_flower_l"
+          aria-hidden="true"
+          width="130"
+          height="205"
+          style="max-width: 130px"
+        ></canvas>
+        <canvas
+          id="yellow_flower_thin"
+          aria-hidden="true"
+          width="48"
+          height="86"
+          style="max-width: 48px"
+        ></canvas>
+        <canvas
+          id="yellow_flower_wide"
+          aria-hidden="true"
+          width="68"
+          height="87"
+          style="max-width: 68px"
+        ></canvas>
+        <canvas
+          id="small_pink_flower"
+          aria-hidden="true"
+          width="30"
+          height="40"
+          style="max-width: 30px"
+        ></canvas>
+        <canvas
+          id="big_pink_flower_r"
+          aria-hidden="true"
+          width="85"
+          height="131"
+          style="max-width: 85px"
+        ></canvas>
+      </div>
+      <div class="flowers__right">
+        <canvas
+          id="yellow_flower_short-wide"
+          aria-hidden="true"
+          width="68"
+          height="63"
+          style="max-width: 68px"
+        ></canvas>
+        <canvas
+          id="leaves"
+          aria-hidden="true"
+          width="29"
+          height="35"
+          style="max-width: 29px"
+        ></canvas>
+      </div>
     </div>
     <header>
-      <canvas id="you_are_invited"></canvas>
+      <canvas
+        id="you_are_invited"
+        width="483"
+        height="73"
+        style="max-width: 483px"
+      ></canvas>
       <h1>
         <!-- <div class="cursive kapakana">You Are Invited</div> -->
         <span class="sr-only">You Are Invited</span>
