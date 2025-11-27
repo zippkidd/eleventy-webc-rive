@@ -6,13 +6,21 @@
     <title>Emily & Jacob | Wedding Invite</title>
     <link rel="stylesheet" href="/styles/index.css" webc:keep />
     <link rel="preload" href="/rive/rive.wasm" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link rel="preload" href="/rive/big_pink_flower_l.riv" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link rel="preload" href="/rive/yellow_flower_thin.riv" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link rel="preload" href="/rive/yellow_flower_short-wide.riv" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link rel="preload" href="/rive/yellow_flower_wide.riv" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link rel="preload" href="/rive/big_pink_flower_r.riv" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link rel="preload" href="/rive/small_pink_flower.riv" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link rel="preload" href="/rive/leaves.riv" as="fetch" crossOrigin="anonymous" webc:keep />
+    <link rel="preload" href="/rive/you_are_invited.riv" as="fetch" crossOrigin="anonymous" webc:keep />
   </head>
   <body>
     <div class="flowers">
       <canvas id="big_pink_flower_l" aria-hidden="true"></canvas>
       <canvas id="yellow_flower_thin" aria-hidden="true"></canvas>
       <canvas id="yellow_flower_wide" aria-hidden="true"></canvas>
-      <canvas id="yellow_flower_short_wide" aria-hidden="true"></canvas>
+      <canvas id="yellow_flower_short-wide" aria-hidden="true"></canvas>
       <canvas id="big_pink_flower_r" aria-hidden="true"></canvas>
       <canvas id="small_pink_flower" aria-hidden="true"></canvas>
       <canvas id="leaves" aria-hidden="true"></canvas>

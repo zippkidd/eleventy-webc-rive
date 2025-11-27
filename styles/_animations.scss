@@ -9,3 +9,8 @@ canvas {
     width: clamp(24ch, 35%, 35ch);
   }
 }
+
+.flowers {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}

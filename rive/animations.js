@@ -1,9 +1,9 @@
 import { Rive, RuntimeLoader, Fit, Layout } from '@rive-app/canvas-lite'
 
+
 RuntimeLoader.setWasmUrl('/rive/rive.wasm')
 
-const animationsList =
-[
+const animationsList = [
   'big_pink_flower_l',
   'big_pink_flower_r',
   'yellow_flower_thin',
@@ -14,44 +14,42 @@ const animationsList =
   'you_are_invited'
 ]
 
+const aspectRatio = 475 / 67 // width / height from your animation
+
 const init = () => {
-  const cursiveHandwritingCanvas = document.getElementById('handwritten-cursive')
-  const layout = new Layout({
-    fit: Fit.Contain // Changed from Fit.Layout
-    // alignment: Alignment.Center // Optional: centers the animation
-  })
+  animationsList.forEach((animationName) => {
+    const canvas = document.getElementById(animationName)
+    if (!canvas) return
 
-  const riveInstance = new Rive({
-    src: '/rive/flowers_animating_prod-1.0.1.riv',
-    canvas: cursiveHandwritingCanvas,
-    layout,
-    autoplay: true,
-    onLoad: () => {
-      setCanvasSize()
+    const layout = new Layout({
+      fit: Fit.Contain
+      // alignment: Alignment.Center // Optional: centers the animation
+    })
+
+    const riveInstance = new Rive({
+      src: `/rive/${animationName}.riv`,
+      canvas,
+      layout,
+      autoplay: true,
+      onLoad: () => {
+        setCanvasSize()
+      }
+    })
+
+    // Set canvas dimensions to maintain aspect ratio
+    const setCanvasSize = () => {
+      const containerWidth = window.innerWidth * 0.65
+      canvas.width = containerWidth
+      canvas.height = containerWidth / aspectRatio
+      if (riveInstance) {
+        riveInstance.resizeDrawingSurfaceToCanvas()
+      }
     }
+
+    setCanvasSize()
+    window.addEventListener('resize', setCanvasSize, false)
+    riveInstance.play()
   })
-
-  // Set canvas dimensions to maintain aspect ratio
-  const setCanvasSize = () => {
-    console.log('setCanvasSize..2')
-    const containerWidth = window.innerWidth * 0.65 // 80% of viewport width
-    const aspectRatio = 475 / 67 // width / height from your animation
-
-    cursiveHandwritingCanvas.width = containerWidth
-    cursiveHandwritingCanvas.height = containerWidth / aspectRatio
-
-    if (riveInstance) {
-      riveInstance.resizeDrawingSurfaceToCanvas()
-    }
-  }
-
-  setCanvasSize()
-
-  window.addEventListener('resize', setCanvasSize, false)
-
-  // riveInstance.play('You-Are-Invited')
-  riveInstance.play()
-  // riveInstance.pause()
 }
 
 if (document.readyState === 'LOADING') {
