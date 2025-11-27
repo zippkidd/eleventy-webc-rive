@@ -11,8 +11,13 @@ canvas {
 }
 
 .flowers {
+  background: purple;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin: calc((var(--space_m-3xl) + var(--space_s-l)) * -1)
     calc(var(--space_s) * -1) 0;
+
+  canvas {
+    margin-top: -1px;
+  }
 }

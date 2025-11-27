@@ -1,24 +1,25 @@
 import { Rive, RuntimeLoader, Fit, Layout } from '@rive-app/canvas-lite'
 
-
 RuntimeLoader.setWasmUrl('/rive/rive.wasm')
 
+// Each animation now includes a `name` and an `aspectRatio` (width / height).
+// Adjust the aspectRatio values as needed per animation.
+const DEFAULT_ASPECT_RATIO = 4 / 3 // fallback width / height
+
 const animationsList = [
-  'big_pink_flower_l',
-  'big_pink_flower_r',
-  'yellow_flower_thin',
-  'yellow_flower_wide',
-  'yellow_flower_short-wide',
-  'small_pink_flower',
-  'leaves',
-  'you_are_invited'
+  { name: 'big_pink_flower_l', aspectRatio: 130 / 205 },
+  { name: 'big_pink_flower_r', aspectRatio: DEFAULT_ASPECT_RATIO },
+  { name: 'yellow_flower_thin', aspectRatio: DEFAULT_ASPECT_RATIO },
+  { name: 'yellow_flower_wide', aspectRatio: DEFAULT_ASPECT_RATIO },
+  { name: 'yellow_flower_short-wide', aspectRatio: DEFAULT_ASPECT_RATIO },
+  { name: 'small_pink_flower', aspectRatio: DEFAULT_ASPECT_RATIO },
+  { name: 'leaves', aspectRatio: DEFAULT_ASPECT_RATIO },
+  { name: 'you_are_invited', aspectRatio: DEFAULT_ASPECT_RATIO }
 ]
 
-const aspectRatio = 475 / 67 // width / height from your animation
-
 const init = () => {
-  animationsList.forEach((animationName) => {
-    const canvas = document.getElementById(animationName)
+  animationsList.forEach((animation) => {
+    const canvas = document.getElementById(animation.name)
     if (!canvas) return
 
     const layout = new Layout({
@@ -27,7 +28,7 @@ const init = () => {
     })
 
     const riveInstance = new Rive({
-      src: `/rive/${animationName}.riv`,
+      src: `/rive/${animation.name}.riv`,
       canvas,
       layout,
       autoplay: true,
@@ -40,7 +41,7 @@ const init = () => {
     const setCanvasSize = () => {
       const containerWidth = window.innerWidth * 0.65
       canvas.width = containerWidth
-      canvas.height = containerWidth / aspectRatio
+      canvas.height = containerWidth / (animation.aspectRatio || DEFAULT_ASPECT_RATIO)
       if (riveInstance) {
         riveInstance.resizeDrawingSurfaceToCanvas()
       }
