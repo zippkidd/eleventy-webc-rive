@@ -87,6 +87,20 @@
           style="max-width: 48px"
         ></canvas>
         <canvas
+          id="yellow_flower_thin-2"
+          aria-hidden="true"
+          width="48"
+          height="86"
+          style="max-width: 48px"
+        ></canvas>
+        <canvas
+          id="yellow_flower_thin-3"
+          aria-hidden="true"
+          width="48"
+          height="86"
+          style="max-width: 48px"
+        ></canvas>
+        <canvas
           id="yellow_flower_wide"
           aria-hidden="true"
           width="68"
