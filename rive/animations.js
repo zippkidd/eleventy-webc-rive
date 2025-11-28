@@ -2,17 +2,26 @@ import { Rive, RuntimeLoader, Fit, Layout, RiveFile } from '@rive-app/canvas-lit
 
 RuntimeLoader.setWasmUrl('/rive/rive.wasm')
 
-const DEFAULT_ASPECT_RATIO = 1
+// const animationsList = [
+//   { name: 'big_pink_flower_l', aspectRatio: 130 / 205 },
+//   { name: 'big_pink_flower_r', aspectRatio: 85 / 131 },
+//   { name: 'yellow_flower_thin', aspectRatio: 48 / 86 },
+//   { name: 'yellow_flower_wide', aspectRatio: 68 / 87 },
+//   { name: 'yellow_flower_short-wide', aspectRatio: 68 / 63 },
+//   { name: 'small_pink_flower', aspectRatio: 30 / 40 },
+//   { name: 'leaves', aspectRatio: 29 / 35 },
+//   { name: 'you_are_invited', aspectRatio: 483 / 73 }
+// ]
 
 const animationsList = [
-  { name: 'big_pink_flower_l', aspectRatio: 130 / 205 },
-  { name: 'big_pink_flower_r', aspectRatio: 85 / 131 },
-  { name: 'yellow_flower_thin', aspectRatio: 48 / 86 },
-  { name: 'yellow_flower_wide', aspectRatio: 68 / 87 },
-  { name: 'yellow_flower_short-wide', aspectRatio: 68 / 63 },
-  { name: 'small_pink_flower', aspectRatio: 30 / 40 },
-  { name: 'leaves', aspectRatio: 29 / 35 },
-  { name: 'you_are_invited', aspectRatio: 483 / 73 }
+  { name: 'big_pink_flower_l' },
+  { name: 'big_pink_flower_r' },
+  { name: 'yellow_flower_thin' },
+  { name: 'yellow_flower_wide' },
+  { name: 'yellow_flower_short-wide' },
+  { name: 'small_pink_flower' },
+  { name: 'leaves' },
+  { name: 'you_are_invited' }
 ]
 
 const loadRiveFile = (src, onSuccess, onError) => {
@@ -70,9 +79,6 @@ const createRiveInstance = (canvas, animation) => {
   })
 
   const setCanvasSize = () => {
-    const containerWidth = window.innerWidth * 0.65
-    canvas.width = containerWidth
-    canvas.height = containerWidth / (animation.aspectRatio || DEFAULT_ASPECT_RATIO)
     if (riveInstance) {
       riveInstance.resizeDrawingSurfaceToCanvas()
     }
@@ -133,7 +139,7 @@ const init = async () => {
     console.error('Error loading Rive files:', error)
   }
 
-  console.table(animationsList)
+  // console.table(animationsList)
 
   updateCanvasVisibility()
 
