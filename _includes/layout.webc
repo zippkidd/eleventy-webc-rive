@@ -78,6 +78,7 @@
           width="130"
           height="205"
         ></canvas>
+        <canvas id="leaves" aria-hidden="true" width="29" height="35"></canvas>
         <canvas
           id="yellow_flower_thin"
           aria-hidden="true"
@@ -85,22 +86,18 @@
           height="86"
         ></canvas>
         <canvas
-          id="yellow_flower_thin-2"
+          class="flip-horizontal"
+          id="leaves-2"
           aria-hidden="true"
-          width="48"
-          height="86"
+          width="29"
+          height="35"
         ></canvas>
         <canvas
-          id="yellow_flower_thin-3"
-          aria-hidden="true"
-          width="48"
-          height="86"
-        ></canvas>
-        <canvas
-          id="yellow_flower_wide"
+          class="flip-horizontal"
+          id="yellow_flower_short-wide"
           aria-hidden="true"
           width="68"
-          height="87"
+          height="63"
         ></canvas>
         <canvas
           id="small_pink_flower"
@@ -109,20 +106,45 @@
           height="40"
         ></canvas>
         <canvas
-          id="big_pink_flower_r"
-          aria-hidden="true"
-          width="85"
-          height="131"
-        ></canvas>
-      </div>
-      <div class="flowers__right">
-        <canvas
-          id="yellow_flower_short-wide"
+          id="yellow_flower_wide"
           aria-hidden="true"
           width="68"
-          height="63"
+          height="87"
         ></canvas>
-        <canvas id="leaves" aria-hidden="true" width="29" height="35"></canvas>
+        <canvas
+          id="small_pink_flower-2"
+          aria-hidden="true"
+          width="30"
+          height="40"
+        ></canvas>
+        <canvas
+          id="leaves-3"
+          aria-hidden="true"
+          width="29"
+          height="35"
+        ></canvas>
+        <div id="big_pink_flower_r_wrapper">
+          <canvas
+            id="big_pink_flower_r"
+            aria-hidden="true"
+            width="85"
+            height="131"
+          ></canvas>
+          <div class="flowers__right">
+            <canvas
+              id="yellow_flower_short-wide-2"
+              aria-hidden="true"
+              width="68"
+              height="63"
+            ></canvas>
+            <canvas
+              id="leaves-4"
+              aria-hidden="true"
+              width="29"
+              height="35"
+            ></canvas>
+          </div>
+        </div>
       </div>
     </div>
     <header>

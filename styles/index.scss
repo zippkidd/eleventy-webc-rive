@@ -42,7 +42,8 @@ body {
 }
 
 header {
-  max-width: 75ch * 1.25;
+  // max-width: 75ch * 1.25;
+  max-width: 75ch;
   margin-inline: auto;
   text-align: center;
 }

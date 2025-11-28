@@ -80,6 +80,7 @@ const createRiveInstance = (canvas, animation) => {
 
   const setCanvasSize = () => {
     if (riveInstance) {
+      // console.log(`Resizing canvas for ${animation.name}`)
       riveInstance.resizeDrawingSurfaceToCanvas()
     }
   }

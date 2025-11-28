@@ -9,3 +9,25 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+.min-tablet {
+  display: none;
+  @media screen and (min-width: 981px) {
+    display: block;
+  }
+}
+
+.min-desktop {
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
+}
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}
+
+.flip-vertical {
+  transform: scaleY(-1);
+}
