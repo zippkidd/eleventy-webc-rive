@@ -1,4 +1,4 @@
-import { Rive, RuntimeLoader, Fit, Layout } from '@rive-app/canvas-lite'
+import { Rive, RuntimeLoader, Fit, Layout, RiveFile } from '@rive-app/canvas-lite'
 
 RuntimeLoader.setWasmUrl('/rive/rive.wasm')
 
@@ -15,8 +15,36 @@ const animationsList = [
   { name: 'you_are_invited', aspectRatio: 483 / 73 }
 ]
 
-const riveInstances = new Map()
-const resizeListeners = new Map()
+const loadRiveFile = (src, onSuccess, onError) => {
+  const file = new RiveFile({
+    src,
+    onLoad: () => onSuccess(file),
+    onLoadError: onError
+  })
+  file.init().catch(onError)
+}
+
+const loadAllRiveFiles = async () => {
+  const loadingPromises = animationsList.map((animation) => {
+    return new Promise((resolve, reject) => {
+      loadRiveFile(
+        `/rive/${animation.name}.riv`,
+        (file) => {
+          animation.riveFile = file
+          resolve()
+        },
+        (error) => {
+          console.error(`Failed to load Rive file ${animation.name}:`, error)
+          reject(error)
+        }
+      )
+    })
+  })
+  return Promise.all(loadingPromises)
+}
+
+const canvasToInstance = new Map()
+const canvasToResizeListener = new Map()
 let resizeObserver
 
 const isCanvasVisible = (canvas) => {
@@ -24,16 +52,15 @@ const isCanvasVisible = (canvas) => {
   return window.getComputedStyle(canvas).visibility !== 'hidden'
 }
 
-const createRiveInstance = (animation) => {
-  const canvas = document.getElementById(animation.name)
-  if (!canvas) return null
+const createRiveInstance = (canvas, animation) => {
+  if (!canvas || !animation.riveFile) return null
 
   const layout = new Layout({
     fit: Fit.Contain
   })
 
   const riveInstance = new Rive({
-    src: `/rive/${animation.name}.riv`,
+    riveFile: animation.riveFile,
     canvas,
     layout,
     autoplay: true,
@@ -57,47 +84,57 @@ const createRiveInstance = (animation) => {
 
   setCanvasSize()
   window.addEventListener('resize', resizeHandler, false)
-  resizeListeners.set(animation.name, resizeHandler)
+  canvasToResizeListener.set(canvas, resizeHandler)
   riveInstance.play()
 
   return riveInstance
 }
 
-const cleanupRiveInstance = (animationName) => {
-  const instance = riveInstances.get(animationName)
+const cleanupRiveInstance = (canvas) => {
+  const instance = canvasToInstance.get(canvas)
   if (instance) {
     instance.stop()
     instance.dispose?.()
-    riveInstances.delete(animationName)
+    canvasToInstance.delete(canvas)
   }
 
-  const resizeHandler = resizeListeners.get(animationName)
+  const resizeHandler = canvasToResizeListener.get(canvas)
   if (resizeHandler) {
     window.removeEventListener('resize', resizeHandler, false)
-    resizeListeners.delete(animationName)
+    canvasToResizeListener.delete(canvas)
   }
 }
 
 const updateCanvasVisibility = () => {
   animationsList.forEach((animation) => {
-    const canvas = document.getElementById(animation.name)
-    if (!canvas) return
+    const canvases = document.querySelectorAll(`canvas[id^="${animation.name}"]`)
+    if (!canvases || canvases.length === 0) return
 
-    const isVisible = isCanvasVisible(canvas)
-    const hasInstance = riveInstances.has(animation.name)
+    canvases.forEach((canvas) => {
+      const isVisible = isCanvasVisible(canvas)
+      const hasInstance = canvasToInstance.has(canvas)
 
-    if (isVisible && !hasInstance) {
-      const instance = createRiveInstance(animation)
-      if (instance) {
-        riveInstances.set(animation.name, instance)
+      if (isVisible && !hasInstance) {
+        const instance = createRiveInstance(canvas, animation)
+        if (instance) {
+          canvasToInstance.set(canvas, instance)
+        }
+      } else if (!isVisible && hasInstance) {
+        cleanupRiveInstance(canvas)
       }
-    } else if (!isVisible && hasInstance) {
-      cleanupRiveInstance(animation.name)
-    }
+    })
   })
 }
 
-const init = () => {
+const init = async () => {
+  try {
+    await loadAllRiveFiles()
+  } catch (error) {
+    console.error('Error loading Rive files:', error)
+  }
+
+  console.table(animationsList)
+
   updateCanvasVisibility()
 
   resizeObserver = new window.ResizeObserver(() => {
@@ -105,10 +142,10 @@ const init = () => {
   })
 
   animationsList.forEach((animation) => {
-    const canvas = document.getElementById(animation.name)
-    if (canvas) {
+    const canvases = document.querySelectorAll(`canvas[id^="${animation.name}"]`)
+    canvases.forEach((canvas) => {
       resizeObserver.observe(canvas)
-    }
+    })
   })
 
   let resizeTimeout
