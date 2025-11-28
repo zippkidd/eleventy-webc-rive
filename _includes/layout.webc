@@ -77,49 +77,42 @@
           aria-hidden="true"
           width="130"
           height="205"
-          style="max-width: 130px"
         ></canvas>
         <canvas
           id="yellow_flower_thin"
           aria-hidden="true"
           width="48"
           height="86"
-          style="max-width: 48px"
         ></canvas>
         <canvas
           id="yellow_flower_thin-2"
           aria-hidden="true"
           width="48"
           height="86"
-          style="max-width: 48px"
         ></canvas>
         <canvas
           id="yellow_flower_thin-3"
           aria-hidden="true"
           width="48"
           height="86"
-          style="max-width: 48px"
         ></canvas>
         <canvas
           id="yellow_flower_wide"
           aria-hidden="true"
           width="68"
           height="87"
-          style="max-width: 68px"
         ></canvas>
         <canvas
           id="small_pink_flower"
           aria-hidden="true"
           width="30"
           height="40"
-          style="max-width: 30px"
         ></canvas>
         <canvas
           id="big_pink_flower_r"
           aria-hidden="true"
           width="85"
           height="131"
-          style="max-width: 85px"
         ></canvas>
       </div>
       <div class="flowers__right">
@@ -128,26 +121,13 @@
           aria-hidden="true"
           width="68"
           height="63"
-          style="max-width: 68px"
         ></canvas>
-        <canvas
-          id="leaves"
-          aria-hidden="true"
-          width="29"
-          height="35"
-          style="max-width: 29px"
-        ></canvas>
+        <canvas id="leaves" aria-hidden="true" width="29" height="35"></canvas>
       </div>
     </div>
     <header>
-      <canvas
-        id="you_are_invited"
-        width="483"
-        height="73"
-        style="max-width: 483px"
-      ></canvas>
+      <canvas id="you_are_invited" width="483" height="73"></canvas>
       <h1>
-        <!-- <div class="cursive kapakana">You Are Invited</div> -->
         <span class="sr-only">You Are Invited</span>
         <div class="subhead el-messiri">to the Wedding of</div>
         <div class="heading">Emily Wagner<br />& Jacob Tylek</div>
