@@ -1,0 +1,33 @@
+<div>
+  <p>test123</p>
+  <canvas
+    id="big_pink_flower_l"
+    aria-hidden="true"
+    width="130"
+    height="205"
+    style="max-width: 130px"
+  ></canvas>
+</div>
+
+<script>
+  window.customElements.whenDefined(
+    "rive-instance",
+    class extends HTMLElement {
+      connectedCallback() {
+        console.log("woah");
+        const canvas = this.querySelector(":scope canvas");
+        if (!canvas) return;
+
+        const riveFile = "/rive/big_pink_flower_l.riv";
+
+        const rive = new Rive({
+          src: riveFile,
+          canvas: canvas,
+          autoplay: true,
+        });
+
+        this.rive = rive;
+      }
+    }
+  );
+</script>

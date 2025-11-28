@@ -126,6 +126,7 @@
       </div>
     </div>
     <header>
+      <rive-instance></rive-instance>
       <canvas
         id="you_are_invited"
         width="483"
