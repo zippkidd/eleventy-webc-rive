@@ -1,0 +1,124 @@
+@use "reset.min.css";
+@use "fonts" as *;
+@use "helpers" as *;
+@use "functions" as *;
+@use "tokens" as *;
+@use "animations" as *;
+
+// Base
+
+html {
+  font-size: 16px;
+}
+
+body {
+  // font-size: var();
+  padding: var(--space_m-3xl) var(--space_s) var(--space_l-xl);
+
+  // margin-top: var(--space_s-l);
+
+  margin-bottom: rem(1200);
+
+  background: $color-tertiary-pink;
+  // font-family: 'El Messiri', Arial, sans-serif;
+  // font-family: 'Monaspace Radon', Arial, sans-serif;
+  // font-family: 'Cinzel', Arial, sans-serif;
+  font-family: $font-family-body;
+  font-weight: 310;
+  font-size: var(--step_0);
+  color: $color-tertiary;
+  color: rgb(3, 95, 95);
+  color: $color-primary;
+  // background: rgb(221, 238, 238);
+  background: $color-tertiary-pink;
+  // background: $color-cream;
+  background: radial-gradient(
+    circle,
+    $color-tertiary-pink 0%,
+    $color-cream 21%,
+    $color-cream 78%,
+    $color-tertiary-red 100%
+  );
+}
+
+header {
+  max-width: 75ch * 1.25;
+  margin-inline: auto;
+  text-align: center;
+}
+
+main {
+  max-width: 75ch;
+  margin-top: var(--space_m-3xl);
+  margin-inline: auto;
+}
+
+// #region Typography
+// @use "./fonts.scss"
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // font-family: 'Georgia';
+  // font-family: 'Didot';
+  // font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+  // font-family: 'Palatino', 'Georgia', sans-serif;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  font-size: var(--step_5);
+  // text-shadow: 1px 1px 1px rgb(219, 66, 130);
+  font-family: $font-family-heading;
+  // font-family: 'Cinzel';
+  // font-family: 'El Messiri';
+}
+
+.cursive {
+  font-size: var(--step_5);
+}
+
+.subhead {
+  margin-top: 1em;
+  font-size: var(--step_1);
+  letter-spacing: -0.0125ch;
+  line-height: 1;
+  font-weight: 250;
+}
+
+.heading {
+  margin-top: var(--space_3xs);
+}
+
+.prose {
+  letter-spacing: -0.05ch;
+}
+
+h2 {
+  font-family: $font-family-subheading;
+}
+
+h2 {
+  font-size: var(--step_4);
+}
+
+// #endregion Typography
+
+// #region Composition
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+// #endregion Composition
+
+// #region Utility
+// #endregion Utility
+
+// #region Block
+// #endregion Block
+
+// #region Exception
+// #endregion Exception

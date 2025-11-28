@@ -1,0 +1,59 @@
+canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  &#you_are_invited {
+    margin: 0 auto;
+    max-width: 30ch;
+    width: clamp(24ch, 35%, 35ch);
+  }
+
+  &#leaves {
+    display: none;
+  }
+}
+
+.flowers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  // background: purple;
+  // display: grid;
+  // grid-template-columns: repeat(7, 1fr);
+  // margin: calc((var(--space_m-3xl) + var(--space_s-l)) * -1)
+  //   calc(var(--space_s) * -1) 0;
+
+  &__top,
+  &__right {
+    display: flex;
+  }
+
+  &__top {
+    justify-content: space-between;
+  }
+
+  &__right {
+    flex-direction: column;
+    align-items: flex-end;
+    overflow: hidden;
+    canvas {
+      transform: rotate(90deg);
+
+      @at-root .flowers & {
+        margin: 0 -2px;
+      }
+    }
+  }
+
+  canvas {
+    margin: -1px 0;
+
+    @media screen and (min-width: 600px) {
+      &#leaves {
+        display: block;
+      }
+    }
+  }
+}

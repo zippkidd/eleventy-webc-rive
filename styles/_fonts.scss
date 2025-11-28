@@ -1,0 +1,78 @@
+// All Caps, super fancy serif
+@font-face {
+  font-family: "Cinzel";
+  src: url("../fonts/Cinzel.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+$font-family-cinzel: "Cinzel", Arial, sans-serif;
+.cinzel {
+  font-family: $font-family-cinzel;
+}
+
+// Fancy sans serif font
+@font-face {
+  font-family: "El Messiri";
+  src: url("../fonts/ElMessiri.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+$font-family-el-messiri: "El Messiri", Arial, sans-serif;
+.el-messiri {
+  font-family: $font-family-el-messiri;
+}
+
+// hand written looking sans-serif font
+@font-face {
+  font-family: "Monaspace Radon";
+  src: url("../fonts/MonaspaceRadon.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+$font-family-monaspace-radon: "Monaspace Radon", Arial, sans-serif;
+.monaspace-radon {
+  font-family: $font-family-monaspace-radon;
+}
+
+// standard prose sans, emily's fave
+@font-face {
+  font-family: "Bree Regular";
+  src: url("../fonts/BreeRegular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+$font-family-bree-regular: "Bree Regular", Arial, sans-serif;
+.bree-regular {
+  font-family: $font-family-bree-regular;
+  font-weight: 300;
+}
+
+// Serif Font, for titles, similar to Cinzel but less wide and exaggerated
+@font-face {
+  font-family: "Angst";
+  src: url("../fonts/Angst.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+$font-family-angst: "Angst", Georgia, serif;
+.angst {
+  font-family: $font-family-angst;
+}
+
+// Cursive font for accents
+@font-face {
+  font-family: "Kapakana";
+  src: url("../fonts/Kapakana.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+$font-family-kapakana: "Kapakana", Arial, sans-serif;
+.kapakana {
+  font-family: $font-family-kapakana;
+}

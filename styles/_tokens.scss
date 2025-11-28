@@ -1,0 +1,89 @@
+// #region Fluid Scaling Tokens
+@use "fonts" as *;
+@use "utopia" as utopia;
+
+/* @link https://utopia.fyi/type/calculator?c=360,18,1.25,1240,30,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  // generates tokens -2 -> 5
+  @include utopia.generateTypeScale(
+    (
+      "minWidth": 360,
+      "maxWidth": 1240,
+      "minFontSize": 18,
+      "maxFontSize": 30,
+      "minTypeScale": 1.25,
+      "maxTypeScale": 1.25,
+      "positiveSteps": 5,
+      "negativeSteps": 2,
+      "prefix": "step_",
+      "relativeTo": "viewport-width",
+    )
+  );
+
+  @include utopia.generateSpaceScale(
+    (
+      "minWidth": 360,
+      "maxWidth": 1240,
+      "minSize": 18,
+      "maxSize": 30,
+      "positiveSteps": (
+        1.5,
+        2,
+        3,
+        4,
+        6,
+      ),
+      "negativeSteps": (
+        0.75,
+        0.5,
+        0.25,
+      ),
+      "customSizes": (
+        "s-l",
+        "m-3xl",
+      ),
+      "prefix": "space_",
+      "relativeTo": "viewport-width",
+    )
+  );
+}
+
+/* Step -2: 11.52px → 19.2px */
+/* Step -1: 14.4px → 24px */
+/* Step 0: 18px → 30px */
+/* Step 1: 22.5px → 37.5px */
+/* Step 2: 28.125px → 46.875px */
+/* Step 3: 35.1563px → 58.5938px */
+/* Step 4: 43.9453px → 73.2422px */
+/* Step 5: 54.9316px → 91.5527px */
+
+// #endregion Fluid Scale
+
+// #region Design Tokens
+
+// Colors
+$color-primary-pink: #d54858;
+// $color-secondary-pink: #ff589e;
+$color-tertiary-pink: #ffe6ec;
+$color-tertiary-red: #ffd2dd;
+// $color-pink: rgb(255, 88, 158);
+// $color-pink: rgb(219, 66, 130);
+// $color-orange: orange;
+$color-light-orange: #faf0e3;
+$color-orange: #ec8c13;
+$color-red: #ec2013;
+$color-cream: #fff0f5;
+
+// Swatches
+$color-primary: $color-primary-pink;
+$color-secondary: $color-orange;
+$color-tertiary: $color-red;
+
+$color-neutral-bg: $color-cream;
+// $color-neutral-bg: $color-cream;
+
+$font-family-heading: $font-family-angst;
+$font-family-subheading: $font-family-angst;
+$font-family-body: $font-family-bree-regular;
+// #endregion Design Tokens

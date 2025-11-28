@@ -1,0 +1,36 @@
+---
+layout: "layout-fonts.webc"
+---
+
+<article class="flow">
+  <p>Examples of some various typefaces being used as headings and prose.</p>
+
+  <h2 class="el-messiri">El Messiri</h2>
+  <h3 class="el-messiri">The quick brown fox jumped over the lazy dog</h3>
+  <p class="el-messiri">The quick brown fox jumped over the lazy dog</p>
+  <p class="el-messiri">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis consequuntur ut soluta ipsa deserunt officiis facilis nam repellat, quasi inventore, doloremque nesciunt quas veritatis, dolorum cum quam quo aspernatur eos.</p>
+
+  <h2 class="cinzel">Cinzel</h2>
+  <h3 class="cinzel">The quick brown fox jumped over the lazy dog</h3>
+
+  <p class="cinzel">The quick brown fox jumped over the lazy dog</p>
+  <p class="cinzel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis fugit eos voluptas accusantium cupiditate, repudiandae iusto maxime explicabo reiciendis quia odit sed numquam cumque, quisquam minus molestiae aperiam. Quidem, aspernatur.</p>
+
+  <h2 class="monaspace-radon">Monaspace Radon</h2>
+  <h3 class="monaspace-radon">The quick brown fox jumped over the lazy dog</h3>
+
+  <p class="monaspace-radon">The quick brown fox jumped over the lazy dog</p>
+  <p class="monaspace-radon">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ut quo adipisci autem vitae quia quod fugiat quam, iure nihil. Fugiat, explicabo? Esse sequi eveniet minus. Inventore corporis eum autem.</p>
+
+  <h2 class="angst">Angst</h2>
+  <h3 class="angst">The quick brown fox jumped over the lazy dog</h3>
+  <p class="angst">The quick brown fox jumped over the lazy dog</p>
+  <p class="angst">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ut quo adipisci autem vitae quia quod fugiat quam, iure nihil. Fugiat, explicabo? Esse sequi eveniet minus. Inventore corporis eum autem.</p>
+
+
+  <h2 class="bree-regular">Bree Regular</h2>
+  <h3 class="bree-regular">The quick brown fox jumped over the lazy dog</h3>
+
+  <p class="bree-regular">The quick brown fox jumped over the lazy dog</p>
+  <p class="bree-regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ut quo adipisci autem vitae quia quod fugiat quam, iure nihil. Fugiat, explicabo? Esse sequi eveniet minus. Inventore corporis eum autem.</p>
+</article>

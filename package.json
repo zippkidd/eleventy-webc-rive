@@ -2,8 +2,10 @@
   "name": "eleventy-webc-gsap",
   "version": "1.0.0",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --quiet"
+    "bundle": "node esbuild.js",
+    "bundle:watch": "node esbuild.js --watch",
+    "build": "npm run bundle && npx @11ty/eleventy",
+    "start": "concurrently --kill-others \"npm run bundle:watch\" \"npx @11ty/eleventy --serve --quiet\""
   },
   "repository": {
     "type": "git",
@@ -19,9 +21,18 @@
   "type": "module",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-webc": "^0.11.2"
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@rive-app/canvas-lite": "^2.31.6",
+    "browserslist": "^4.24.4",
+    "lightningcss": "^1.29.3",
+    "sass": "^1.87.0",
+    "utopia-core-scss": "^1.3.0"
   },
   "devDependencies": {
-    "standard": "^17.1.2"
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.25.10",
+    "modern-css-reset": "^1.4.0",
+    "standard": "^17.1.2",
+    "terser": "^5.44.0"
   }
 }
