@@ -18,9 +18,11 @@ const animationsList = [
   { name: 'big_pink_flower_r' },
   { name: 'yellow_flower_thin' },
   { name: 'yellow_flower_wide' },
+  { name: 'rotated_yellow_flower_wide' },
   { name: 'yellow_flower_short-wide' },
   { name: 'small_pink_flower' },
   { name: 'leaves' },
+  { name: 'rotated_leaves' },
   { name: 'you_are_invited' }
 ]
 
@@ -140,7 +142,7 @@ const init = async () => {
     console.error('Error loading Rive files:', error)
   }
 
-  // console.table(animationsList)
+  console.table(animationsList)
 
   updateCanvasVisibility()
 

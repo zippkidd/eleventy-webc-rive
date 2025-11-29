@@ -78,12 +78,25 @@
           width="130"
           height="205"
         ></canvas>
-        <canvas id="leaves" aria-hidden="true" width="29" height="35"></canvas>
-        <canvas
+        <!-- <div class="leaves-wrapper"> -->
+          <canvas data-flip="horizontal" id="leaves" aria-hidden="true" width="29" height="35"></canvas>
+        <!-- </div> -->
+        <canvas id="yellow_flower_thin" height="86" width="48" aria-hidden="true"></canvas>
+        <canvas id="small_pink_flower" height="40" width="30" aria-hidden="true"></canvas>
+        <canvas id="yellow_flower_short-wide" height="63" width="68" aria-hidden="true"></canvas>
+
+        <!-- <canvas id="leaves" aria-hidden="true" width="29" height="35"></canvas> -->
+        <!-- <canvas
           id="yellow_flower_thin"
           aria-hidden="true"
           width="48"
           height="86"
+        ></canvas>
+        <canvas
+          id="small_pink_flower"
+          aria-hidden="true"
+          width="30"
+          height="40"
         ></canvas>
         <canvas
           class="flip-horizontal"
@@ -98,12 +111,6 @@
           aria-hidden="true"
           width="68"
           height="63"
-        ></canvas>
-        <canvas
-          id="small_pink_flower"
-          aria-hidden="true"
-          width="30"
-          height="40"
         ></canvas>
         <canvas
           id="yellow_flower_wide"
@@ -122,7 +129,7 @@
           aria-hidden="true"
           width="29"
           height="35"
-        ></canvas>
+        ></canvas> -->
         <div id="big_pink_flower_r_wrapper">
           <canvas
             id="big_pink_flower_r"
@@ -131,8 +138,10 @@
             height="131"
           ></canvas>
           <div class="flowers__right">
-            <canvas
-              id="yellow_flower_short-wide-2"
+            <canvas id="rotated_yellow_flower_wide" height="68" width="87" aria-hidden="true"></canvas>
+            <canvas id="rotated_leaves" height="27" width="35" aria-hidden="true"></canvas>
+            <!-- <canvas
+              id="yellow_flower_wide-2"
               aria-hidden="true"
               width="68"
               height="63"
@@ -142,7 +151,7 @@
               aria-hidden="true"
               width="29"
               height="35"
-            ></canvas>
+            ></canvas> -->
           </div>
         </div>
       </div>

@@ -10,24 +10,24 @@
   border: 0 !important;
 }
 
-.min-tablet {
+[data-min-viewport="tablet"] {
   display: none;
   @media screen and (min-width: 981px) {
     display: block;
   }
 }
 
-.min-desktop {
+[data-min-viewport="desktop"] {
   display: none;
   @media screen and (min-width: 1200px) {
     display: block;
   }
 }
 
-.flip-horizontal {
+[data-flip="horizontal"] {
   transform: scaleX(-1);
 }
 
-.flip-vertical {
+[data-flip="vertical"] {
   transform: scaleY(-1);
 }
