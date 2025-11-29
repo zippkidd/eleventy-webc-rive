@@ -1,4 +1,4 @@
-import { Rive, RuntimeLoader, Fit, Layout, RiveFile } from '@rive-app/canvas-lite'
+import { Rive, RuntimeLoader, Fit, Alignment, Layout, RiveFile } from '@rive-app/canvas-lite'
 
 RuntimeLoader.setWasmUrl('/rive/rive.wasm')
 
@@ -67,7 +67,8 @@ const createRiveInstance = (canvas, animation) => {
   if (!canvas || !animation.riveFile) return null
 
   const layout = new Layout({
-    fit: Fit.Contain
+    fit: Fit.Contain,
+    alignment: animation.name === 'big_pink_flower_r' ? Alignment.CenterRight : Alignment.TopLeft
   })
 
   const riveInstance = new Rive({

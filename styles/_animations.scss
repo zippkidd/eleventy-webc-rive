@@ -8,7 +8,7 @@ canvas {
     max-width: 30ch;
     width: clamp(24ch, 35%, 35ch);
     aspect-ratio: 483 / 73;
-    transform: translateX(8px);
+    // transform: translateX(8px);
   }
 
   &#big_pink_flower_l {
@@ -37,8 +37,6 @@ canvas {
   &[id^="leaves"] {
     aspect-ratio: 29 / 35;
   }
-
-
 }
 
 .flowers {
@@ -58,15 +56,20 @@ canvas {
   // }
 
   &__top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: grid;
+    grid-template-areas: "left-pink-flower filler-flowers right-pink-flower";
+    grid-template-columns: 3fr 6fr 3fr;
+    // grid-template-rows: auto;
+
+    // display: flex;
+    // align-items: flex-start;
+    // justify-content: space-between;
     // gap: var(--space_xs);
 
-    & > canvas {
-      flex-grow: 0;
-      flex-shrink: 1;
-    }
+    // & > canvas {
+    //   flex-grow: 0;
+    //   flex-shrink: 1;
+    // }
 
     // .leaves-wrapper {
     //   flex-basis: 2%;
@@ -83,36 +86,58 @@ canvas {
     //   margin-right: -2%;
     // }
 
-
     [id^="big_pink_flower"] {
       flex-grow: 1;
       flex-shrink: 0;
     }
 
+    [id^="leaves"] {
+      flex-basis: 10%;
+      max-width: 10%;
+    }
+
     [id^="yellow_flower"] {
       flex-basis: 10%;
+      max-width: 20%;
+    }
+
+    #yellow_flower_thin {
+      flex-basis: 8%;
+      max-width: 8%;
     }
 
     #yellow_flower_short-wide {
       flex-basis: 15%;
+      max-width: 15%;
     }
 
     [id^="small_pink_flower"] {
       flex-basis: 15%;
+      max-width: 15%;
     }
 
     #big_pink_flower_l {
-      max-width: 24%;
+      // max-width: 24%;
+      width: 100%;
+      grid-area: left-pink-flower;
     }
     #big_pink_flower_r_wrapper {
       position: relative;
-      max-width: 19%;
+      // max-width: 19%;
+      width: 100%;
       aspect-ratio: 85 / 131;
+      grid-area: right-pink-flower;
     }
     #big_pink_flower_r {
       width: 100%;
     }
+  }
 
+  &__filler {
+    grid-area: filler-flowers;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
   }
 
   &__right {

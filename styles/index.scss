@@ -15,7 +15,7 @@ body {
   // font-size: var();
   padding: var(--space_m-3xl) var(--space_s-l) var(--space_l-xl);
 
-  margin-top: var(--space_xl);
+  // margin-top: var(--space_xl);
 
   margin-bottom: rem(1200);
 
@@ -39,9 +39,11 @@ body {
     $color-cream 78%,
     $color-tertiary-red 100%
   );
+  position: relative;
 }
 
 header {
+  margin-top: var(--space_xl);
   // max-width: 75ch * 1.25;
   max-width: 75ch;
   margin-inline: auto;
@@ -105,6 +107,10 @@ h2 {
 
 h2 {
   font-size: var(--step_4);
+}
+
+p {
+  text-wrap: pretty;
 }
 
 // #endregion Typography
